@@ -2,7 +2,7 @@
 # Script to patch windows servers via powershell
 # Created by hakon.brynildsen@nsm.stat.no 16.12.2014
 #
-
+# v.0.1
 
 $TmpDir = "c:\temp\"
 $SchedName = "InstallUpdates_ScheduledTask_Powershell_Extravaganza"
