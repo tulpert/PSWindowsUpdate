@@ -2,7 +2,7 @@
 # Script to patch windows servers via powershell
 # Created by hakon.brynildsen@nsm.stat.no 16.12.2014
 #
-# v.0.1
+
 
 $TmpDir = "c:\temp\"
 $SchedName = "InstallUpdates_ScheduledTask_Powershell_Extravaganza"
@@ -111,9 +111,9 @@ Function CleanScheduledTask ([string]$mySchedName = $SchedName) {
 
 
 Function GetHash ([String]$myString) {
-  $md5 = New-Object -TypeName System.Security.Cryptography.MD5CryptoServiceProvider
+  $sha = New-Object -TypeName System.Security.Cryptography.SHA256Cng
   $utf8 = New-Object -TypeName System.Text.UTF8Encoding
-  return [System.BitConverter]::ToString($md5.ComputeHash($utf8.GetBytes($myString)))
+  return [System.BitConverter]::ToString($sha.ComputeHash($utf8.GetBytes($myString)))
 }
 
 
